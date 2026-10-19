@@ -1,58 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101225">
-<title>WhereToFind Games — Free Online Games</title>
-<style>
-:root{--bg:#101225;--panel:#191c34;--text:#f7f7ff;--muted:#b6bad3;--accent:#7c5cff;--green:#00d5b2}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top left,#25204c,#101225 48%);color:var(--text);font-family:system-ui,Arial,sans-serif}
-header{position:sticky;top:0;z-index:5;background:#101225ed;border-bottom:1px solid #ffffff16}.nav{max-width:1200px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.logo{font-weight:900;font-size:1.2rem}.logo span{color:var(--green)}.search{flex:1;min-width:180px}.search input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #ffffff20;background:#20233d;color:white;font-size:1rem}
-main{max-width:1200px;margin:auto;padding:24px 18px 50px}.hero{padding:28px;border-radius:24px;background:linear-gradient(125deg,#5b36d6,#25285b 65%,#087d79);display:flex;justify-content:space-between;align-items:center;gap:18px}
-.hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;margin:0 0 12px}.hero p{margin:0;color:#eceaff;max-width:580px}.hero-badge{font-size:4rem}
-.categories{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0}.cat{border:1px solid #ffffff20;background:#1b1e36;color:white;padding:9px 14px;border-radius:999px;cursor:pointer;font-weight:700}.cat.active,.cat:hover{background:var(--accent)}
-.section-head{display:flex;justify-content:space-between;align-items:center;margin:28px 0 14px}.section-head h2{margin:0;font-size:1.35rem}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.card{background:var(--panel);border:1px solid #ffffff10;border-radius:18px;overflow:hidden;transition:transform .18s}.card:hover{transform:translateY(-4px)}.cover{height:145px;display:grid;place-items:center;font-size:4rem;background:linear-gradient(135deg,#343a70,#23264a)}
-.card-body{padding:13px}.card h3{font-size:1rem;margin:0 0 6px}.card p{font-size:.83rem;color:var(--muted);margin:0 0 12px;min-height:34px}.tag{font-size:.72rem;color:#bff8ef;background:#0a6c60;padding:4px 8px;border-radius:999px;display:inline-block;margin-bottom:9px}.play{display:block;text-align:center;text-decoration:none;background:var(--accent);color:white;font-weight:800;border-radius:10px;padding:10px}.play:hover{background:#6845f0}
-.notice{background:var(--panel);padding:14px 16px;border-radius:14px;color:var(--muted);line-height:1.5;margin-top:24px}.empty{display:none;color:var(--muted);padding:24px 0}.footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:36px}
-@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:650px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.hero{padding:22px}.hero-badge{font-size:3rem}.cover{height:115px;font-size:3.2rem}.card-body{padding:11px}}@media(max-width:380px){.grid{grid-template-columns:1fr}.cover{height:150px}}
-</style></head>
-<body>
-<header><div class="nav"><div class="logo">WhereToFind <span>GAMES</span></div><label class="search"><input id="search" type="search" placeholder="🔎 Search games..." aria-label="Search games"></label></div></header>
-<main>
-<section class="hero"><div><h1>Play. Explore.<br>Have Fun.</h1><p>Discover free browser games. No download needed for games that run directly on the page or open in your browser.</p></div><div class="hero-badge" aria-hidden="true">🎮</div></section>
-<div class="categories" id="categories">
-<button class="cat active" data-category="All">All Games</button><button class="cat" data-category="Arcade">🕹️ Arcade</button><button class="cat" data-category="Puzzle">🧩 Puzzle</button><button class="cat" data-category="Action">⚡ Action</button><button class="cat" data-category="Classic">⭐ Classic</button>
-</div>
-<div class="section-head"><h2>🔥 Games to Play</h2><span id="count" style="color:var(--muted);font-size:.9rem">6 games</span></div>
-<section class="grid" id="games">
-<article class="card" data-name="snake" data-category="Classic Arcade"><div class="cover" style="background:linear-gradient(135deg,#116b54,#183e48)">🐍</div><div class="card-body"><span class="tag">CLASSIC</span><h3>Snake</h3><p>Eat, grow, and avoid hitting yourself.</p><<button class="play" onclick="document.getElementById('snake-game').style.display='block'">
-Play Now 🎮
-</button>
+<title>WhereToFind Games</title>
 
-<div id="snake-game" style="display:none; margin-top:15px;">
-  <iframe
-    src="https://playsnake.org/"
-    width="100%"
-    height="500"
-    style="border:0; border-radius:12px;"
-    allowfullscreen
-    title="Snake Game">
-  </iframe>
-</div>></div></article>
-<article class="card" data-name="2048 numbers" data-category="Puzzle Classic"><div class="cover" style="background:linear-gradient(135deg,#a65d26,#603d5e)">🔢</div><div class="card-body"><span class="tag">PUZZLE</span><h3>2048</h3><p>Combine number tiles to reach 2048.</p><a class="play" href="https://play2048.co/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
-<article class="card" data-name="chess strategy" data-category="Puzzle Classic"><div class="cover" style="background:linear-gradient(135deg,#315c83,#25304f)">♟️</div><div class="card-body"><span class="tag">STRATEGY</span><h3>Chess</h3><p>Play chess in your browser.</p><a class="play" href="https://lichess.org/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
-<article class="card" data-name="minesweeper mine" data-category="Puzzle Classic"><div class="cover" style="background:linear-gradient(135deg,#59617c,#30344c)">💣</div><div class="card-body"><span class="tag">PUZZLE</span><h3>Minesweeper</h3><p>Use clues to uncover safe squares.</p><a class="play" href="https://minesweeper.online/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
-<article class="card" data-name="tetris blocks" data-category="Arcade Puzzle"><div class="cover" style="background:linear-gradient(135deg,#6446c6,#1d4775)">🟪</div><div class="card-body"><span class="tag">ARCADE</span><h3>Tetris</h3><p>Fit falling blocks together.</p><a class="play" href="https://tetris.com/play-tetris" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
-<article class="card" data-name="hextris hexagon" data-category="Arcade Action"><div class="cover" style="background:linear-gradient(135deg,#d94e68,#753d9d)">⬡</div><div class="card-body"><span class="tag">ARCADE</span><h3>Hextris</h3><p>A fast, colorful hexagon puzzle game.</p><a class="play" href="https://hextris.io/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:#101225;
+  color:#fff;
+  font-family:Arial,sans-serif
+}
+header{
+  background:#191c34;
+  padding:16px;
+  position:sticky;
+  top:0;
+  z-index:5
+}
+.logo{font-size:24px;font-weight:bold}
+.logo span{color:#00d5b2}
+main{max-width:1200px;margin:auto;padding:20px}
+.hero{
+  background:linear-gradient(120deg,#7045e8,#087d79);
+  padding:30px;
+  border-radius:20px
+}
+.hero h1{font-size:38px;margin:0 0 10px}
+input{
+  width:100%;
+  padding:13px;
+  border:1px solid #444;
+  border-radius:12px;
+  margin-top:15px;
+  font-size:16px
+}
+.categories{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:22px 0
+}
+button{
+  cursor:pointer;
+  border:0;
+  border-radius:10px;
+  padding:11px 14px;
+  background:#292d4b;
+  color:white;
+  font-weight:bold
+}
+button.active,button:hover{background:#7045e8}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:15px
+}
+.card{
+  background:#191c34;
+  border-radius:16px;
+  padding:14px;
+  text-align:center;
+  min-width:0
+}
+.icon{font-size:55px;padding:12px}
+.card h3{margin:5px}
+.card p{color:#bbb;font-size:14px}
+.play{
+  display:block;
+  width:100%;
+  background:#7045e8;
+  margin-top:12px;
+  text-decoration:none;
+  text-align:center;
+  color:white;
+  border-radius:10px;
+  padding:12px;
+  border:0;
+  cursor:pointer
+}
+#gameArea{
+  display:none;
+  margin-top:25px;
+  background:#080b16;
+  padding:12px;
+  border-radius:16px;
+  text-align:center
+}
+.gamebar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px
+}
+#board{
+  display:block;
+  width:min(90vw,600px);
+  aspect-ratio:1;
+  height:auto;
+  margin:12px auto;
+  background:#080b12;
+  border:2px solid #00d5b2;
+  border-radius:8px;
+  touch-action:none
+}
+#gameArea:fullscreen{
+  width:100%;
+  height:100%;
+  margin:0;
+  border-radius:0;
+  overflow:auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:#101225
+}
+#gameArea:fullscreen #board{
+  width:min(82vmin,800px);
+  max-height:82vmin
+}
+.note{color:#bbb;font-size:13px}
+footer{text-align:center;padding:30px;color:#aaa}
+@media(max-width:850px){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  main{padding:12px}
+  .hero h1{font-size:30px}
+  .icon{font-size:42px}
+}
+@media(max-width:350px){
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">WhereToFind <span>GAMES 🎮</span></div>
+  <input id="search" placeholder="🔎 Search games..." aria-label="Search games">
+</header>
+
+<main>
+<section class="hero">
+  <h1>Play. Explore.<br>Have Fun!</h1>
+  <p>Free browser games in one place.</p>
 </section>
-<p class="empty" id="empty">No games found. Try another search.</p>
-<div class="notice"><strong>About free games:</strong> These games link to their respective websites and may open in a new tab. Availability, ads, and terms are controlled by each provider. Only embed games when the owner permits it.</div>
-<div class="footer">© <span id="year"></span> WhereToFind Games · Play responsibly</div>
+
+<div class="categories">
+  <button class="active" data-cat="All">All Games</button>
+  <button data-cat="Arcade">🕹️ Arcade</button>
+  <button data-cat="Puzzle">🧩 Puzzle</button>
+  <button data-cat="Action">⚡ Action</button>
+  <button data-cat="Classic">⭐ Classic</button>
+</div>
+
+<h2>🔥 Popular Games</h2>
+
+<section class="grid" id="games">
+
+<article class="card" data-name="snake" data-cat="Arcade Classic">
+  <div class="icon">🐍</div>
+  <h3>Snake</h3>
+  <p>Play Snake directly on this website.</p>
+  <button class="play" onclick="startSnake()">Play Now ▶</button>
+</article>
+
+<article class="card" data-name="2048 numbers" data-cat="Puzzle Classic">
+  <div class="icon">🔢</div>
+  <h3>2048</h3>
+  <p>Combine number tiles.</p>
+  <a class="play" href="https://play2048.co/" target="_blank" rel="noopener noreferrer">Play Now ↗</a>
+</article>
+
+<article class="card" data-name="chess strategy" data-cat="Puzzle Classic">
+  <div class="icon">♟️</div>
+  <h3>Chess</h3>
+  <p>Play chess online.</p>
+  <a class="play" href="https://lichess.org/" target="_blank" rel="noopener noreferrer">Play Now ↗</a>
+</article>
+
+<article class="card" data-name="minesweeper" data-cat="Puzzle Classic">
+  <div class="icon">💣</div>
+  <h3>Minesweeper</h3>
+  <p>Find safe squares.</p>
+  <a class="play" href="https://minesweeper.online/" target="_blank" rel="noopener noreferrer">Play Now ↗</a>
+</article>
+
+<article class="card" data-name="tetris blocks" data-cat="Arcade Puzzle">
+  <div class="icon">🟪</div>
+  <h3>Tetris</h3>
+  <p>Fit falling blocks together.</p>
+  <a class="play" href="https://tetris.com/play-tetris" target="_blank" rel="noopener noreferrer">Play Now ↗</a>
+</article>
+
+<article class="card" data-name="hextris" data-cat="Arcade Action">
+  <div class="icon">⬡</div>
+  <h3>Hextris</h3>
+  <p>Play a colorful arcade puzzle.</p>
+  <a class="play" href="https://hextris.io/" target="_blank" rel="noopener noreferrer">Play Now ↗</a>
+</article>
+
+</section>
+
+<section id="gameArea">
+  <div class="gamebar">
+    <h2>🐍 Snake <span id="score">Score: 0</span></h2>
+    <div>
+      <button onclick="startSnake()">↻ Restart</button>
+      <button onclick="fullscreenGame()">⛶ Fullscreen</button>
+      <button onclick="closeGame()">✕ Close</button>
+    </div>
+  </div>
+
+  <canvas id="board" width="600" height="600"></canvas>
+  <p class="note">
+    Computer: Arrow Keys or WASD<br>
+    Mobile: Swipe on the game board. No on-screen direction buttons.
+  </p>
+</section>
+
+<footer>© <span id="year"></span> WhereToFind Games</footer>
 </main>
+
 <script>
-const input=document.getElementById('search'),cards=[...document.querySelectorAll('.card')],buttons=[...document.querySelectorAll('.cat')];let active='All';
-function filter(){const q=input.value.trim().toLowerCase();let n=0;cards.forEach(c=>{const text=(c.dataset.name+' '+c.querySelector('h3').textContent+' '+c.querySelector('p').textContent).toLowerCase();const ok=text.includes(q)&&(active==='All'||c.dataset.category.split(' ').includes(active));c.style.display=ok?'':'none';if(ok)n++});document.getElementById('count').textContent=n+' game'+(n===1?'':'s');document.getElementById('empty').style.display=n?'none':'block'}
-buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.category;buttons.forEach(x=>x.classList.toggle('active',x===b));filter()}));input.addEventListener('input',filter);document.getElementById('year').textContent=new Date().getFullYear();
-</script></body></html>
+const search=document.getElementById("search");
+const cards=[...document.querySelectorAll(".card")];
+const categoryButtons=[...document.querySelectorAll("[data-cat]")];
+let activeCategory="All";
+
+function filterGames(){
+  const q=search.value.toLowerCase().trim();
+  let count=0;
+
+  cards.forEach(card=>{
+    const text=(card.dataset.name+" "+card.textContent).toLowerCase();
+    const cats=card.dataset.cat.split(" ");
+    const visible=text.includes(q)&&
+      (activeCategory==="All"||cats.includes(activeCategory));
+
+    card.style.display=visible?"":"none";
+    if(visible)count++;
+  });
+}
+
+categoryButtons.forEach(button=>{
+  button.addEventListener("click",()=>{
+    activeCategory=button.dataset.cat;
+    categoryButtons.forEach(b=>b.classList.toggle("active",b===button));
+    filterGames();
+  });
+});
+search.addEventListener("input",filterGames);
+document.getElementById("year").textContent=new Date().getFullYear();
+
+/* Built-in Snake game */
+const area=document.getElementById("gameArea");
+const canvas=document.getElementById("board");
+const ctx=canvas.getContext("2d");
+const cell=30;
+const tiles=20;
+
+let snake,food,dx,dy,score,timer,over=false;
+let nextX=1,nextY=0;
+
+function randomFood(){
+  let p;
+  do{
+    p={
+      x:Math.floor(Math.random()*tiles),
+      y:Math.floor(Math.random()*tiles)
+    };
+  }while(snake.some(s=>s.x===p.x&&s.y===p.y));
+  return p;
+}
+
+function startSnake(){
+  area.style.display="block";
+  area.scrollIntoView({behavior:"smooth"});
+  clearInterval(timer);
+
+  snake=[
+    {x:10,y:10},
+    {x:9,y:10},
+    {x:8,y:10}
+  ];
+
+  dx=1;dy=0;nextX=1;nextY=0;
+  score=0;over=false;
+  food=randomFood();
+
+  updateScore();
+  draw();
+  timer=setInterval(moveSnake,115);
+}
+
+function updateScore(){
+  document.getElementById("score").textContent="Score: "+score;
+}
+
+function draw(){
+  ctx.fillStyle="#080b12";
+  ctx.fillRect(0,0,600,600);
+
+  ctx.fillStyle="#ffca55";
+  ctx.fillRect(food.x*cell+4,food.y*cell+4,cell-8,cell-8);
+
+  snake.forEach((p,i)=>{
+    ctx.fillStyle=i===0?"#00d5b2":"#39a88f";
+    ctx.fillRect(p.x*cell+2,p.y*cell+2,cell-4,cell-4);
+  });
+
+  if(over){
+    ctx.fillStyle="#000b";
+    ctx.fillRect(0,0,600,600);
+    ctx.fillStyle="white";
+    ctx.textAlign="center";
+    ctx.font="bold 44px Arial";
+    ctx.fillText("Game Over!",300,285);
+    ctx.font="22px Arial";
+    ctx.fillText("Tap Restart to play again",300,325);
+  }
+}
+
+function moveSnake(){
+  if(over)return;
+
+  dx=nextX;dy=nextY;
+
+  const head={x:snake[0].x+dx,y:snake[0].y+dy};
+
+  if(head.x<0||head.y<0||head.x>=tiles||head.y>=tiles||
+     snake.some(p=>p.x===head.x&&p.y===head.y)){
+    over=true;
+    clearInterval(timer);
+    draw();
+    return;
+  }
+
+  snake.unshift(head);
+
+  if(head.x===food.x&&head.y===food.y){
+    score++;
+    food=randomFood();
+    updateScore();
+  }else{
+    snake.pop();
+  }
+
+  draw();
+}
+
+function turn(x,y){
+  if(x===-dx&&y===-dy)return;
+  nextX=x;nextY=y;
+}
+
+document.addEventListener("keydown",e=>{
+  if(area.style.display==="none")return;
+
+  const key=e.key.toLowerCase();
+
+  if(["arrowup","arrowdown","arrowleft","arrowright"].includes(key)){
+    e.preventDefault();
+  }
+
+  if((key==="arrowup"||key==="w")&&dy!==1)turn(0,-1);
+  if((key==="arrowdown"||key==="s")&&dy!==-1)turn(0,1);
+  if((key==="arrowleft"||key==="a")&&dx!==1)turn(-1,0);
+  if((key==="arrowright"||key==="d")&&dx!==-1)turn(1,0);
+});
+
+/* Swipe controls for touchscreen: no visible touch buttons */
+let startX=0,startY=0;
+
+canvas.addEventListener("pointerdown",e=>{
+  startX=e.clientX;
+  startY=e.clientY;
+});
+
+canvas.addEventListener("pointerup",e=>{
+  const x=e.clientX-startX;
+  const y=e.clientY-startY;
+
+  if(Math.max(Math.abs(x),Math.abs(y))<18)return;
+
+  if(Math.abs(x)>Math.abs(y)){
+    if(x>0&&dx!==-1)turn(1,0);
+    if(x<0&&dx!==1)turn(-1,0);
+  }else{
+    if(y>0&&dy!==-1)turn(0,1);
+    if(y<0&&dy!==1)turn(0,-1);
+  }
+});
+
+async function fullscreenGame(){
+  try{
+    if(!document.fullscreenElement){
+      if(area.requestFullscreen){
+        await area.requestFullscreen();
+      }else if(area.webkitRequestFullscreen){
+        area.webkitRequestFullscreen();
+      }
+    }else{
+      await document.exitFullscreen();
+    }
+  }catch(error){
+    alert("Fullscreen is not supported in this browser.");
+  }
+}
+
+function closeGame(){
+  clearInterval(timer);
+  area.style.display="none";
+  if(document.fullscreenElement){
+    document.exitFullscreen?.();
+  }
+}
+</script>
+</body>
+</html>
