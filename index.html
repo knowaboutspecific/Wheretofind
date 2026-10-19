@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Playbound – Free browser games</title>
-<meta name="description" content="Free-to-play browser games from an independent studio. No downloads, no accounts.">
-<meta name="theme-color" content="#0f1220">
-<meta property="og:title" content="Playbound">
-<meta property="og:description" content="Free-to-play browser games. No downloads, no accounts.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f1220'/%3E%3Cpath d='M16 5l9 11-9 11-9-11z' fill='%23f2a65a'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101225">
+<title>WhereToFind Games — Free Online Games</title>
 <style>
-@property --h{syntax:"<number>";inherits:true;initial-value:18}
-:root{--h:18;--bg:#0f1220;--panel:#171b2f;--line:#2a3050;--text:#eef0f8;--muted:#a3abc8;
---cut:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,24px 100%,0 calc(100% - 24px));
---display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;color-scheme:dark;transition:--h .7s ease}
-:is(:root,.card,.tile,dialog){--acc:hsl(var(--h) 85% 62%);--ink:hsl(var(--h) 60% 8%)}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{background:var(--bg);color:var(--text);font:400 1rem/1.6 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
-.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:#fff;color:#000;padding:.5rem 1rem;z-index:9}
-h1,h2,h3{font-family:var(--display);line-height:1;letter-spacing:-.01em}
-section{padding:4.5rem 0}
-.sec{font-size:clamp(2rem,4vw,2.75rem)}
-
-.nav{position:sticky;top:0;z-index:5;background:rgb(15 18 32/.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+:root{--bg:#101225;--panel:#191c34;--text:#f7f7ff;--muted:#b6bad3;--accent:#7c5cff;--green:#00d5b2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top left,#25204c,#101225 48%);color:var(--text);font-family:system-ui,Arial,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#101225ed;border-bottom:1px solid #ffffff16}.nav{max-width:1200px;margin:auto;padding:14px 18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-weight:900;font-size:1.2rem}.logo span{color:var(--green)}.search{flex:1;min-width:180px}.search input{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #ffffff20;background:#20233d;color:white;font-size:1rem}
+main{max-width:1200px;margin:auto;padding:24px 18px 50px}.hero{padding:28px;border-radius:24px;background:linear-gradient(125deg,#5b36d6,#25285b 65%,#087d79);display:flex;justify-content:space-between;align-items:center;gap:18px}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;margin:0 0 12px}.hero p{margin:0;color:#eceaff;max-width:580px}.hero-badge{font-size:4rem}
+.categories{display:flex;gap:9px;flex-wrap:wrap;margin:22px 0}.cat{border:1px solid #ffffff20;background:#1b1e36;color:white;padding:9px 14px;border-radius:999px;cursor:pointer;font-weight:700}.cat.active,.cat:hover{background:var(--accent)}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:28px 0 14px}.section-head h2{margin:0;font-size:1.35rem}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid #ffffff10;border-radius:18px;overflow:hidden;transition:transform .18s}.card:hover{transform:translateY(-4px)}.cover{height:145px;display:grid;place-items:center;font-size:4rem;background:linear-gradient(135deg,#343a70,#23264a)}
+.card-body{padding:13px}.card h3{font-size:1rem;margin:0 0 6px}.card p{font-size:.83rem;color:var(--muted);margin:0 0 12px;min-height:34px}.tag{font-size:.72rem;color:#bff8ef;background:#0a6c60;padding:4px 8px;border-radius:999px;display:inline-block;margin-bottom:9px}.play{display:block;text-align:center;text-decoration:none;background:var(--accent);color:white;font-weight:800;border-radius:10px;padding:10px}.play:hover{background:#6845f0}
+.notice{background:var(--panel);padding:14px 16px;border-radius:14px;color:var(--muted);line-height:1.5;margin-top:24px}.empty{display:none;color:var(--muted);padding:24px 0}.footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:36px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:650px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.hero{padding:22px}.hero-badge{font-size:3rem}.cover{height:115px;font-size:3.2rem}.card-body{padding:11px}}@media(max-width:380px){.grid{grid-template-columns:1fr}.cover{height:150px}}
+</style></head>
+<body>
+<header><div class="nav"><div class="logo">WhereToFind <span>GAMES</span></div><label class="search"><input id="search" type="search" placeholder="🔎 Search games..." aria-label="Search games"></label></div></header>
+<main>
+<section class="hero"><div><h1>Play. Explore.<br>Have Fun.</h1><p>Discover free browser games. No download needed for games that run directly on the page or open in your browser.</p></div><div class="hero-badge" aria-hidden="true">🎮</div></section>
+<div class="categories" id="categories">
+<button class="cat active" data-category="All">All Games</button><button class="cat" data-category="Arcade">🕹️ Arcade</button><button class="cat" data-category="Puzzle">🧩 Puzzle</button><button class="cat" data-category="Action">⚡ Action</button><button class="cat" data-category="Classic">⭐ Classic</button>
+</div>
+<div class="section-head"><h2>🔥 Games to Play</h2><span id="count" style="color:var(--muted);font-size:.9rem">6 games</span></div>
+<section class="grid" id="games">
+<article class="card" data-name="snake" data-category="Classic Arcade"><div class="cover" style="background:linear-gradient(135deg,#116b54,#183e48)">🐍</div><div class="card-body"><span class="tag">CLASSIC</span><h3>Snake</h3><p>Eat, grow, and avoid hitting yourself.</p><a class="play" href="https://playsnake.org/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
+<article class="card" data-name="2048 numbers" data-category="Puzzle Classic"><div class="cover" style="background:linear-gradient(135deg,#a65d26,#603d5e)">🔢</div><div class="card-body"><span class="tag">PUZZLE</span><h3>2048</h3><p>Combine number tiles to reach 2048.</p><a class="play" href="https://play2048.co/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
+<article class="card" data-name="chess strategy" data-category="Puzzle Classic"><div class="cover" style="background:linear-gradient(135deg,#315c83,#25304f)">♟️</div><div class="card-body"><span class="tag">STRATEGY</span><h3>Chess</h3><p>Play chess in your browser.</p><a class="play" href="https://lichess.org/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
+<article class="card" data-name="minesweeper mine" data-category="Puzzle Classic"><div class="cover" style="background:linear-gradient(135deg,#59617c,#30344c)">💣</div><div class="card-body"><span class="tag">PUZZLE</span><h3>Minesweeper</h3><p>Use clues to uncover safe squares.</p><a class="play" href="https://minesweeper.online/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
+<article class="card" data-name="tetris blocks" data-category="Arcade Puzzle"><div class="cover" style="background:linear-gradient(135deg,#6446c6,#1d4775)">🟪</div><div class="card-body"><span class="tag">ARCADE</span><h3>Tetris</h3><p>Fit falling blocks together.</p><a class="play" href="https://tetris.com/play-tetris" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
+<article class="card" data-name="hextris hexagon" data-category="Arcade Action"><div class="cover" style="background:linear-gradient(135deg,#d94e68,#753d9d)">⬡</div><div class="card-body"><span class="tag">ARCADE</span><h3>Hextris</h3><p>A fast, colorful hexagon puzzle game.</p><a class="play" href="https://hextris.io/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
+</section>
+<p class="empty" id="empty">No games found. Try another search.</p>
+<div class="notice"><strong>About free games:</strong> These games link to their respective websites and may open in a new tab. Availability, ads, and terms are controlled by each provider. Only embed games when the owner permits it.</div>
+<div class="footer">© <span id="year"></span> WhereToFind Games · Play responsibly</div>
+</main>
+<script>
+const input=document.getElementById('search'),cards=[...document.querySelectorAll('.card')],buttons=[...document.querySelectorAll('.cat')];let active='All';
+function filter(){const q=input.value.trim().toLowerCase();let n=0;cards.forEach(c=>{const text=(c.dataset.name+' '+c.querySelector('h3').textContent+' '+c.querySelector('p').textContent).toLowerCase();const ok=text.includes(q)&&(active==='All'||c.dataset.category.split(' ').includes(active));c.style.display=ok?'':'none';if(ok)n++});document.getElementById('count').textContent=n+' game'+(n===1?'':'s');document.getElementById('empty').style.display=n?'none':'block'}
+buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.category;buttons.forEach(x=>x.classList.toggle('active',x===b));filter()}));input.addEventListener('input',filter);document.getElementById('year').textContent=new Date().getFullYear();
+</script></body></html>
