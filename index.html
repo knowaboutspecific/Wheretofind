@@ -27,7 +27,20 @@ main{max-width:1200px;margin:auto;padding:24px 18px 50px}.hero{padding:28px;bord
 </div>
 <div class="section-head"><h2>🔥 Games to Play</h2><span id="count" style="color:var(--muted);font-size:.9rem">6 games</span></div>
 <section class="grid" id="games">
-<article class="card" data-name="snake" data-category="Classic Arcade"><div class="cover" style="background:linear-gradient(135deg,#116b54,#183e48)">🐍</div><div class="card-body"><span class="tag">CLASSIC</span><h3>Snake</h3><p>Eat, grow, and avoid hitting yourself.</p><a class="play" href="https://playsnake.org/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
+<article class="card" data-name="snake" data-category="Classic Arcade"><div class="cover" style="background:linear-gradient(135deg,#116b54,#183e48)">🐍</div><div class="card-body"><span class="tag">CLASSIC</span><h3>Snake</h3><p>Eat, grow, and avoid hitting yourself.</p><<button class="play" onclick="document.getElementById('snake-game').style.display='block'">
+Play Now 🎮
+</button>
+
+<div id="snake-game" style="display:none; margin-top:15px;">
+  <iframe
+    src="https://playsnake.org/"
+    width="100%"
+    height="500"
+    style="border:0; border-radius:12px;"
+    allowfullscreen
+    title="Snake Game">
+  </iframe>
+</div>></div></article>
 <article class="card" data-name="2048 numbers" data-category="Puzzle Classic"><div class="cover" style="background:linear-gradient(135deg,#a65d26,#603d5e)">🔢</div><div class="card-body"><span class="tag">PUZZLE</span><h3>2048</h3><p>Combine number tiles to reach 2048.</p><a class="play" href="https://play2048.co/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
 <article class="card" data-name="chess strategy" data-category="Puzzle Classic"><div class="cover" style="background:linear-gradient(135deg,#315c83,#25304f)">♟️</div><div class="card-body"><span class="tag">STRATEGY</span><h3>Chess</h3><p>Play chess in your browser.</p><a class="play" href="https://lichess.org/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
 <article class="card" data-name="minesweeper mine" data-category="Puzzle Classic"><div class="cover" style="background:linear-gradient(135deg,#59617c,#30344c)">💣</div><div class="card-body"><span class="tag">PUZZLE</span><h3>Minesweeper</h3><p>Use clues to uncover safe squares.</p><a class="play" href="https://minesweeper.online/" target="_blank" rel="noopener noreferrer">Play Now ↗</a></div></article>
